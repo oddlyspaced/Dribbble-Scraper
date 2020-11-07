@@ -12,7 +12,14 @@ class ScrapeFeedController {
     val scraper = FeedScraper()
 
     @GetMapping("/popularToday")
-    fun popularToday(@RequestParam(value = "page", defaultValue = "1") page: Int) =
-        scraper.parsePosts(dribbbleBaseUrl, page)
+    fun popularToday(
+        @RequestParam(value = "page", defaultValue = "1") page: Int
+    ) = scraper.parsePosts(dribbbleBaseUrl, page)
+
+    @GetMapping("/search")
+    fun search(
+        @RequestParam(value = "query") query: String,
+        @RequestParam(value = "page", defaultValue = "1") page: Int
+    ) = scraper.parsePosts("$dribbbleBaseUrl/search/$query", page)
 
 }
