@@ -22,7 +22,7 @@ class ScrapeFeedController {
         @RequestParam(value = "page", defaultValue = "1") page: Int
     ) = scraper.parsePosts("$dribbbleBaseUrl/search/$query", page)
 
-    @GetMapping("/category")
+    @GetMapping("/popularCategory")
     fun category(
         @RequestParam(value = "category") category: String,
         @RequestParam(value = "page", defaultValue = "1") page: Int
