@@ -9,8 +9,8 @@ class FeedScraper {
 
     val dribbbleBaseUrl = "https://dribbble.com/"
 
-    fun parsePosts(link: String, page: Int): ArrayList<FeedPost> {
-        val response = URL("$link?page=$page").readText()
+    fun parsePosts(link: String): ArrayList<FeedPost> {
+        val response = URL(link).readText()
         val doc = Jsoup.parse(response)
         // finding all items
         val items = doc.getElementsByClass("shot-thumbnail js-shot-thumbnail shot-thumbnail-container     ")
