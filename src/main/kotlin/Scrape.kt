@@ -1,6 +1,5 @@
+import oddlyspaced.dribbble.scraper.scraper.FeedScraper
 import org.jsoup.Jsoup
-import org.jsoup.nodes.Element
-import java.lang.Exception
 import java.net.URL
 
 class Scrape {
@@ -9,7 +8,7 @@ class Scrape {
         //getCategories()
         //parsePosts()
         //parseSinglePost()
-        FeedScraper().parsePosts()
+        // FeedScraper().parsePosts()
     }
 
     private fun getCategories() {
